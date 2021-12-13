@@ -3,7 +3,11 @@ import "./App.css";
 import React from "react";
 function App() {
     console.log(React.version);
-    return <div className="App"></div>;
+    return (
+        <div className="App">
+            <h1>Teravin</h1>
+        </div>
+    );
 }
 
 export default App;
