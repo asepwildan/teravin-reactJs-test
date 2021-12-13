@@ -1,0 +1,64 @@
+.tableHomeContainer {
+    width: 50%;
+    text-align: left;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.addButton {
+    padding: 4px 15px;
+    background-color: transparent;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addButton:active {
+    border: 1px solid #008cff;
+    background-color: #008cff;
+    color: #fff;
+    transform: translateY(2px);
+}
+.styledTable {
+    border-collapse: collapse;
+    margin: 25px 0px;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styledTable thead tr {
+    background-color: #008cff;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styledTable th,
+.styledTable td {
+    padding: 12px 15px;
+    width: 90px;
+}
+.styledTable th:first-child,
+.styledTable td:first-child {
+    width: 90px;
+}
+
+.styledTable th:nth-child(2),
+.styledTable td:nth-child(2) {
+    width: 190px;
+}
+
+.styledTable th:nth-child(3),
+.styledTable td:nth-child(3) {
+    width: 250px;
+}
+
+.styledTable tbody tr {
+    border-bottom: 1px solid #dddddd;
+    text-align: left;
+}
+
+.styledTable tbody tr:last-of-type {
+    border-bottom: 2px solid #008cff;
+}

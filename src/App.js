@@ -1,11 +1,11 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+
+import MainPage from "./pages/main/main";
 function App() {
-    console.log(React.version);
     return (
         <div className="App">
-            <h1>Teravin</h1>
+            <MainPage />
         </div>
     );
 }
