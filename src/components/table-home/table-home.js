@@ -4,6 +4,9 @@ import React, { useState } from "react";
 import DataPersonal from "../data-personal/data-personal";
 import StepBar from "../step-bar/step-bar";
 import Riwayat from "../riwayat-pendidikan/riwayat-pendidikan";
+import Pengalaman from "../pengalaman-kerja/pengalaman-kerja";
+import AddSkills from "../data-skills/data-skills";
+import Preview from "../preview/preview";
 import { useSelector } from "react-redux";
 const TableHome = () => {
     const setStepBar = useSelector((state) => state);
@@ -19,7 +22,7 @@ const TableHome = () => {
         ],
     ];
     // localStorage.setItem("testing", JSON.stringify(arrDefault));
-    const itemList = JSON.parse(localStorage.getItem("testing"));
+    const itemList = JSON.parse(localStorage.getItem("teravin"));
     let [formDisplay, setFormDisplay] = useState(true);
     console.log(itemList, "cek");
     console.log(itemList);
@@ -46,9 +49,9 @@ const TableHome = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {itemList.map((list, i) => (
+                                {itemList[0].map((list, i) => (
                                     <tr key={i}>
-                                        <td>03</td>
+                                        <td>{i}</td>
                                         <td>{list.namaLengkap}</td>
                                         <td>{list.alamat}</td>
 
@@ -65,7 +68,17 @@ const TableHome = () => {
                 <div>
                     <p>Form Submission</p>
                     <StepBar />
-                    {setStepBar.stepBarReducer.setStepBar == 0 ? <Riwayat /> : <DataPersonal />}
+                    {setStepBar.stepBarReducer.setStepBar == 0 ? (
+                        <DataPersonal />
+                    ) : setStepBar.stepBarReducer.setStepBar == 1 ? (
+                        <Riwayat />
+                    ) : setStepBar.stepBarReducer.setStepBar == 2 ? (
+                        <Pengalaman />
+                    ) : setStepBar.stepBarReducer.setStepBar == 3 ? (
+                        <AddSkills />
+                    ) : (
+                        <Preview />
+                    )}
                 </div>
             )}
         </React.Fragment>

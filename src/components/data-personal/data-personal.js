@@ -5,28 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 const DataPersonal = () => {
     const setStepBar = useSelector((state) => state);
-    let localArr = [];
     let [arr1, setArr1] = useState([]);
     let [item2, setItem2] = useState(JSON.parse(localStorage.getItem("testing")));
     const { personalData2 } = useSelector((state) => state.getPersonalDataReducer);
     const dispatch = useDispatch();
-    const tesLocal = () => {
-        localStorage.removeItem("testing");
-    };
-    const tesLocal2 = () => {
-        localArr.push({ nama: "Awn2", age: 22 });
-        console.log(localArr);
-        localStorage.setItem("testing", JSON.stringify(localArr));
-    };
-
-    const reducInc = () => {
-        dispatch(setStepBarAsync(1));
-    };
 
     const [values, setValues] = useState({
         namaLengkap: "",
         email: "",
-        telepon: null,
+        telepon: "",
         alamat: "",
         repo: "",
     });
@@ -39,38 +26,11 @@ const DataPersonal = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setArr1([...arr1, values]);
-
+        // setArr1([...arr1, values]);
         dispatch(addPersonalDataAsync(values));
         dispatch(setStepBarAsync());
-        // if (item2 !== null) {
-        //     setItem2([...item2, values]);
-        //     localStorage.setItem("testing", JSON.stringify(item2));
-        // } else {
-        //     localStorage.setItem("testing", JSON.stringify(arr1));
-        // }
-    };
-    // const tesLocal3 = () => {
-    //     if (item2 !== null) {
-    //         setItem2([...item2, personalData2]);
-    //         localStorage.setItem("testing", JSON.stringify(item2));
-    //     } else {
-    //         localStorage.setItem("testing", JSON.stringify(arr1));
-    //     }
-    // };
-
-    const setLocal = () => {
-        if (item2 !== null) {
-            setItem2([...item2, personalData2]);
-            return localStorage.setItem("testing", JSON.stringify(item2));
-        } else {
-            return localStorage.setItem("testing", JSON.stringify(arr1));
-        }
     };
 
-    useEffect(() => {
-        setLocal();
-    }, [setStepBar]);
     return (
         <div className={styles.formSubsContainer}>
             <div>
@@ -135,14 +95,9 @@ const DataPersonal = () => {
                             required
                         />
                     </div>
-                    <button>done</button>
+                    <button>next</button>
                 </form>
             </div>
-            <button onClick={tesLocal}>Delete local storage</button>
-            <button onClick={tesLocal2}>tes local storage2</button>
-            <button onClick={reducInc}> step bar increment </button>
-
-            {/* <button onClick={tesLocal3}> coba ke storage </button> */}
         </div>
     );
 };

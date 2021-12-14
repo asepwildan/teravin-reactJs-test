@@ -1,5 +1,8 @@
 const initialState = {
     personalData2: {},
+    riwayatPendidikan: [],
+    pengalamanKerja: [],
+    skills: [],
 };
 
 function getPersonalDataReducer(state = initialState, action) {
@@ -13,7 +16,17 @@ function getPersonalDataReducer(state = initialState, action) {
         case "add-riwayat-pendidikan":
             return {
                 ...state,
-                personalData2: { ...state.personalData2, ...payload.obj2 },
+                riwayatPendidikan: payload.obj2,
+            };
+        case "add-pengalaman-kerja":
+            return {
+                ...state,
+                pengalamanKerja: payload.obj3,
+            };
+        case "add-skills":
+            return {
+                ...state,
+                skills: payload.obj4,
             };
         default:
             return state;

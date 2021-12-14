@@ -1,0 +1,17 @@
+.formSubsContainer {
+    width: 65%;
+    padding: 10px;
+    margin: 30px auto;
+    background-color: rgba(196, 196, 196, 0.3);
+}
+.inputContainer {
+    width: 100%;
+}
+.inputForm {
+    width: 80%;
+    margin-bottom: 20px;
+    height: 30px;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+}

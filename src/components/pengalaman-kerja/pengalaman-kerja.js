@@ -1,11 +1,11 @@
-import styles from "./riwayat.module.css";
-import React, { useState, useEffect } from "react";
-import { setStepBarAsync, addRiwayatAsync } from "../../redux/actions";
+import styles from "./pengalaman-kerja.module.css";
+import React, { useState } from "react";
+import { setStepBarAsync, addPengalamanAsync } from "../../redux/actions";
 import { useDispatch } from "react-redux";
-const Riwayat = () => {
+const Pengalaman = () => {
     const dispatch = useDispatch();
     const [formValues, setFormValues] = useState([
-        { namaSekolah: "", tahunMasuk: "", tahunLulus: "" },
+        { namaPerusahaan: "", tahunMasuk: "", tahunSelesai: "", roleKerja: "" },
     ]);
 
     const handleChange = (i) => (e) => {
@@ -17,66 +17,68 @@ const Riwayat = () => {
         setFormValues(items);
     };
 
-    const tambahRiwayat = () => {
+    const tambahPengalaman = () => {
         setFormValues((formValues) => [
             ...formValues,
-            { namaSekolah: "", tahunMasuk: "", tahunLulus: "" },
+            { namaPerusahaan: "", tahunMasuk: "", tahunSelesai: "", roleKerja: "" },
         ]);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(addRiwayatAsync(formValues));
+        dispatch(addPengalamanAsync(formValues));
         dispatch(setStepBarAsync());
     };
 
-    console.log(formValues, "sss");
+    console.log(formValues, "pengalaman");
     return (
         <div className={styles.formSubsContainer}>
             <div>
-                <p>Pendidikan</p>
+                <p>Pengalaman Kerja</p>
                 <form onSubmit={handleSubmit}>
                     {formValues.map((item, i) => (
                         <div key={i} className={styles.inputContainer}>
                             <div className={styles.inputBoxSekolah}>
-                                <label htmlFor="nama-sekolah" className={styles.labelSekolah}>
-                                    Nama Sekolah
-                                </label>
+                                <label className={styles.labelSekolah}>Nama Perusahaan</label>
                                 <input
                                     type="text"
                                     className={styles.inputForm}
                                     onChange={handleChange(i)}
-                                    name="namaSekolah"
-                                    id="nama-sekolah"
-                                    value={item.namaSekolah}
+                                    name="namaPerusahaan"
+                                    value={item.namaPerusahaan}
+                                    required
+                                />
+                            </div>
+                            <div className={styles.inputBoxSekolah}>
+                                <label className={styles.labelSekolah}>Jabatan</label>
+                                <input
+                                    type="text"
+                                    className={styles.inputForm}
+                                    onChange={handleChange(i)}
+                                    name="roleKerja"
+                                    value={item.roleKerja}
                                     required
                                 />
                             </div>
                             <div className={styles.inputBox}>
-                                <label htmlFor="tahun-masuk" className={styles.labelSekolah}>
-                                    Tahun Masuk
-                                </label>
+                                <label className={styles.labelSekolah}>Tahun Masuk</label>
                                 <input
                                     type="number"
                                     className={styles.inputForm}
                                     onChange={handleChange(i)}
                                     name="tahunMasuk"
-                                    id="tahun-masuk"
                                     value={item.tahunMasuk}
                                     required
                                 />
                             </div>
                             <div className={styles.inputBox}>
-                                <label htmlFor="tahun-lulus" className={styles.labelSekolah}>
-                                    Tahun Lulus
-                                </label>
+                                <label className={styles.labelSekolah}>Tahun Selesai</label>
                                 <input
                                     type="number"
                                     className={styles.inputForm}
                                     onChange={handleChange(i)}
-                                    name="tahunLulus"
-                                    id="tahun-lulus"
-                                    value={item.tahunLulus}
+                                    name="tahunSelesai"
+                                    value={item.tahunSelesai}
                                     required
                                 />
                             </div>
@@ -84,9 +86,9 @@ const Riwayat = () => {
                     ))}
                     <button>next</button>
                 </form>
-                <button onClick={tambahRiwayat}>tambah riwayat pendidikan</button>
+                <button onClick={tambahPengalaman}>Tambah Pengalaman Kerja</button>
             </div>
         </div>
     );
 };
-export default Riwayat;
+export default Pengalaman;
