@@ -7,3 +7,5 @@
 ### node version 14.17.5
 
 ### Material UI
+
+### Redux

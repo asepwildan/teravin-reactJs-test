@@ -4,7 +4,6 @@ import back from "./babck.png";
 import { Link } from "react-router-dom";
 const Detail = () => {
     let { id } = useParams();
-
     let local = JSON.parse(localStorage.getItem("teravin"));
 
     return (
