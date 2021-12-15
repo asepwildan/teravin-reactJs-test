@@ -1,9 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
 import React from "react";
+import RoutesLink from "./routes/routes";
+
 function App() {
-    console.log(React.version);
-    return <div className="App"></div>;
+    return (
+        <div className="App">
+            <RoutesLink />
+        </div>
+    );
 }
 
 export default App;

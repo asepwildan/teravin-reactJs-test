@@ -1,0 +1,143 @@
+.detailContainer {
+    width: 100%;
+    padding: 20px;
+}
+
+header {
+    text-align: left;
+}
+.backBox {
+    display: flex;
+    align-items: center;
+    height: 30px;
+}
+
+.backBox img {
+    height: 100%;
+}
+.backBox p {
+    text-decoration: none;
+    color: black;
+
+    line-height: 0%;
+}
+.headerBox {
+    border-bottom: 2px solid #696969;
+    display: inline-block;
+    padding: 0px 20px;
+}
+.namaHeader {
+    font-size: 26px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    line-height: 0%;
+}
+.detailBox {
+    width: 70%;
+    margin: 20px auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 30px 20px;
+}
+
+.dataPersonalDetail {
+    display: flex;
+    border-top: 2px solid #696969;
+    gap: 10px;
+    align-items: center;
+    padding: 0px 10px;
+}
+
+.dataPendidikan {
+    margin-top: 25px;
+    border-top: 2px solid #696969;
+    position: relative;
+    width: 100%;
+}
+.pendidikanHeader {
+    position: absolute;
+    background-color: #ffffff;
+    display: block;
+    padding-right: 20px;
+    text-align: left;
+    left: 0;
+
+    top: -25px;
+}
+
+.pendidikanHeader p {
+    font-size: 20px;
+    line-height: 0%;
+}
+.dataPendidikanDetail {
+    margin-top: 10px;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+.dataPendidikanDetail p {
+    text-transform: capitalize;
+    line-height: 0%;
+}
+
+.dataSkillsContainer {
+    margin-top: 25px;
+    border-top: 2px solid #696969;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+
+.dataSkills {
+    margin-top: 10px;
+    display: flex;
+    justify-content: right;
+    gap: 10px;
+}
+.dataSkills p {
+    display: inline-block;
+}
+
+@media only screen and (max-width: 800px) {
+    .detailBox {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .detailBox {
+        width: 90%;
+    }
+    .previewTitle {
+        font-size: 16px;
+    }
+
+    .buttonSave {
+        font-size: 12px;
+    }
+    .dataPersonalDetail p {
+        font-size: 12px;
+    }
+    .pendidikanHeader p {
+        font-size: 16px;
+    }
+    .pendidikanHeader {
+        top: -18px;
+    }
+    .dataPendidikanDetail p {
+        font-size: 12px;
+    }
+    .dataSkills p {
+        font-size: 12px;
+    }
+
+    .dataSkillsContainer {
+        gap: 5px;
+    }
+}
+@media only screen and (max-width: 472px) {
+    .detailBox {
+        width: 95%;
+    }
+}
