@@ -8,19 +8,20 @@ import Pengalaman from "../pengalaman-kerja/pengalaman-kerja";
 import AddSkills from "../data-skills/data-skills";
 import Preview from "../preview/preview";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 const TableHome = () => {
     const setStepBar = useSelector((state) => state);
-    let arrDefault = [
-        [
-            {
-                namaLengkap: "",
-                email: "",
-                alamat: "",
-                noTelepon: "",
-                linkRepo: "",
-            },
-        ],
-    ];
+    // let arrDefault = [
+    //     [
+    //         {
+    //             namaLengkap: "",
+    //             email: "",
+    //             alamat: "",
+    //             noTelepon: "",
+    //             linkRepo: "",
+    //         },
+    //     ],
+    // ];
     // localStorage.setItem("testing", JSON.stringify(arrDefault));
     const itemList = JSON.parse(localStorage.getItem("teravin"));
     let [formDisplay, setFormDisplay] = useState(true);
@@ -37,7 +38,9 @@ const TableHome = () => {
                         + Add Data
                     </button>
                     {itemList === null ? (
-                        <h1>data masih kosong</h1>
+                        <div className={styles.emptyBox}>
+                            <p>DATA MASIH KOSONG</p>
+                        </div>
                     ) : (
                         <table className={styles.styledTable}>
                             <thead>
@@ -49,14 +52,20 @@ const TableHome = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {itemList[0].map((list, i) => (
+                                {itemList.map((list, i) => (
                                     <tr key={i}>
-                                        <td>{i}</td>
+                                        <td>{i + 1}</td>
                                         <td>{list.namaLengkap}</td>
                                         <td>{list.alamat}</td>
 
                                         <td>
-                                            <RemoveRedEyeIcon style={{ fill: "#525252" }} />
+                                            <Link
+                                                key={i}
+                                                to={`detail/${i}`}
+                                                style={{ textDecoration: "none" }}
+                                                className="list-game-box">
+                                                <RemoveRedEyeIcon style={{ fill: "#525252" }} />
+                                            </Link>
                                         </td>
                                     </tr>
                                 ))}

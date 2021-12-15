@@ -9,7 +9,6 @@ const Pengalaman = () => {
     ]);
 
     const handleChange = (i) => (e) => {
-        // console.log("index: ", i);
         const value = e.target.value;
         const name = e.target.name;
         let items = [...formValues];
@@ -34,8 +33,8 @@ const Pengalaman = () => {
     return (
         <div className={styles.formSubsContainer}>
             <div>
-                <p>Pengalaman Kerja</p>
-                <form onSubmit={handleSubmit}>
+                <p className={styles.pengalamanTitle}>Pengalaman Kerja</p>
+                <form id="my-form" onSubmit={handleSubmit}>
                     {formValues.map((item, i) => (
                         <div key={i} className={styles.inputContainer}>
                             <div className={styles.inputBoxSekolah}>
@@ -84,9 +83,12 @@ const Pengalaman = () => {
                             </div>
                         </div>
                     ))}
-                    <button>next</button>
                 </form>
-                <button onClick={tambahPengalaman}>Tambah Pengalaman Kerja</button>
+
+                <div className={styles.buttonContainer}>
+                    <button onClick={tambahPengalaman}>Tambah Pengalaman Kerja</button>
+                    <button form="my-form">next</button>
+                </div>
             </div>
         </div>
     );

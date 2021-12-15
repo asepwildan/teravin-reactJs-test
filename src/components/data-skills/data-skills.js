@@ -41,8 +41,8 @@ const AddSkills = () => {
     return (
         <div className={styles.formSubsContainer}>
             <div>
-                <p>Skills</p>
-                <form onSubmit={handleSubmit}>
+                <p className={styles.skillsTitle}>Skills</p>
+                <form id="my-form" onSubmit={handleSubmit}>
                     {skills.map((input, i) => (
                         <div key={input.id} className={styles.inputContainer}>
                             <input
@@ -56,10 +56,12 @@ const AddSkills = () => {
                             />
                         </div>
                     ))}
-
-                    <button>next</button>
                 </form>
-                <button onClick={tambahSkills}>Tambah Pengalaman Kerja</button>
+
+                <div className={styles.buttonContainer}>
+                    <button onClick={tambahSkills}>Tambah Skill</button>
+                    <button form="my-form">next</button>
+                </div>
             </div>
         </div>
     );

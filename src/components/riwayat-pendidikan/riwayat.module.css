@@ -5,6 +5,9 @@
     background-color: rgba(196, 196, 196, 0.3);
 }
 
+.pendidikanTitle {
+    font-size: 20px;
+}
 .inputContainer {
     display: flex;
     margin: 10px 0px;
@@ -32,4 +35,54 @@
 .labelSekolah {
     font-size: 14px;
     font-weight: bold;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.buttonContainer button {
+    padding: 7px 40px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #008cff;
+    cursor: pointer;
+}
+
+.buttonNext button:active {
+    transform: translateY(2px);
+}
+
+@media only screen and (max-width: 800px) {
+    .formSubsContainer {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .formSubsContainer {
+        width: 90%;
+    }
+    .inputContainer {
+        display: block;
+        text-align: left;
+    }
+    .inputBoxSekolah {
+        width: 100%;
+    }
+    .inputBox {
+        width: 100%;
+    }
+    .buttonContainer {
+        display: block;
+    }
+    .buttonContainer button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
 }

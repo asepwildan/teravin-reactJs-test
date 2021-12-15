@@ -95,7 +95,9 @@ const DataPersonal = () => {
                             required
                         />
                     </div>
-                    <button>next</button>
+                    <div className={styles.buttonNext}>
+                        <button>next</button>
+                    </div>
                 </form>
             </div>
         </div>

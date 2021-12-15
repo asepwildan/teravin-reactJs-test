@@ -19,3 +19,45 @@
     outline: none;
     padding: 0px 10px;
 }
+.buttonNext {
+    text-align: right;
+}
+
+.buttonNext button {
+    padding: 5px 40px;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: #008cff;
+    cursor: pointer;
+}
+
+.buttonNext button:active {
+    transform: translateY(2px);
+}
+
+@media only screen and (max-width: 800px) {
+    .formSubsContainer {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .formSubsContainer {
+        width: 90%;
+    }
+    .inputContainer {
+        display: block;
+        text-align: left;
+    }
+
+    .inputForm {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 472px) {
+    label {
+        font-size: 14px;
+    }
+}

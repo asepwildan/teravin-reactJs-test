@@ -1,5 +1,9 @@
 const initialState = {
-    personalData2: {},
+    namaLengkap: "",
+    email: "",
+    telepon: "",
+    alamat: "",
+    repo: "",
     riwayatPendidikan: [],
     pengalamanKerja: [],
     skills: [],
@@ -9,9 +13,14 @@ function getPersonalDataReducer(state = initialState, action) {
     const { type, payload } = action;
     switch (type) {
         case "add-personal-data":
+            console.log(payload.obj1, "obj1");
             return {
                 ...state,
-                personalData2: payload.obj1,
+                namaLengkap: payload.obj1.namaLengkap,
+                email: payload.obj1.email,
+                telepon: payload.obj1.telepon,
+                alamat: payload.obj1.alamat,
+                repo: payload.obj1.repo,
             };
         case "add-riwayat-pendidikan":
             return {

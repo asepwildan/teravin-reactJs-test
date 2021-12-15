@@ -34,8 +34,8 @@ const Riwayat = () => {
     return (
         <div className={styles.formSubsContainer}>
             <div>
-                <p>Pendidikan</p>
-                <form onSubmit={handleSubmit}>
+                <p className={styles.pendidikanTitle}>Pendidikan</p>
+                <form id="my-form" onSubmit={handleSubmit}>
                     {formValues.map((item, i) => (
                         <div key={i} className={styles.inputContainer}>
                             <div className={styles.inputBoxSekolah}>
@@ -82,9 +82,11 @@ const Riwayat = () => {
                             </div>
                         </div>
                     ))}
-                    <button>next</button>
                 </form>
-                <button onClick={tambahRiwayat}>tambah riwayat pendidikan</button>
+                <div className={styles.buttonContainer}>
+                    <button onClick={tambahRiwayat}>Tambah Riwayat Pendidikan</button>
+                    <button form="my-form">next</button>
+                </div>
             </div>
         </div>
     );

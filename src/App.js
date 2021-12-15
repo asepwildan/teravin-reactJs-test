@@ -1,11 +1,11 @@
 import "./App.css";
 import React from "react";
+import RoutesLink from "./routes/routes";
 
-import MainPage from "./pages/main/main";
 function App() {
     return (
         <div className="App">
-            <MainPage />
+            <RoutesLink />
         </div>
     );
 }
