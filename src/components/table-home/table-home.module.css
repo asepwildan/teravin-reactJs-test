@@ -4,7 +4,9 @@
     margin: 0 auto;
     padding: 30px;
 }
-
+.fromSubTitle {
+    font-size: 20px;
+}
 .addButton {
     padding: 4px 15px;
     background-color: transparent;

@@ -11,22 +11,8 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 const TableHome = () => {
     const setStepBar = useSelector((state) => state);
-    // let arrDefault = [
-    //     [
-    //         {
-    //             namaLengkap: "",
-    //             email: "",
-    //             alamat: "",
-    //             noTelepon: "",
-    //             linkRepo: "",
-    //         },
-    //     ],
-    // ];
-    // localStorage.setItem("testing", JSON.stringify(arrDefault));
     const itemList = JSON.parse(localStorage.getItem("teravin"));
     let [formDisplay, setFormDisplay] = useState(true);
-    console.log(itemList, "cek");
-    console.log(itemList);
     const addFormSubs = () => {
         setFormDisplay(false);
     };
@@ -75,7 +61,7 @@ const TableHome = () => {
                 </div>
             ) : (
                 <div>
-                    <p>Form Submission</p>
+                    <p className={styles.fromSubTitle}>Form Submission</p>
                     <StepBar />
                     {setStepBar.stepBarReducer.setStepBar == 0 ? (
                         <DataPersonal />

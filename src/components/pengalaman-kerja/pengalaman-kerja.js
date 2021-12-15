@@ -29,7 +29,6 @@ const Pengalaman = () => {
         dispatch(setStepBarAsync());
     };
 
-    console.log(formValues, "pengalaman");
     return (
         <div className={styles.formSubsContainer}>
             <div>

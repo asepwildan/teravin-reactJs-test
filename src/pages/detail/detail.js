@@ -7,8 +7,6 @@ const Detail = () => {
 
     let local = JSON.parse(localStorage.getItem("teravin"));
 
-    console.log(local);
-    console.log(id, "ini dari url");
     return (
         <div className={styles.detailContainer}>
             <header>
@@ -45,8 +43,8 @@ const Detail = () => {
                     <div className={styles.pendidikanHeader}>
                         <p>Riwayat Pendidikan</p>
                     </div>
-                    {local[id].riwayatPendidikan.map((e) => (
-                        <div className={styles.dataPendidikanDetail}>
+                    {local[id].riwayatPendidikan.map((e, i) => (
+                        <div key={i} className={styles.dataPendidikanDetail}>
                             <p>{e.namaSekolah}</p>
                             <p>
                                 {e.tahunMasuk}-{e.tahunLulus}
@@ -58,8 +56,8 @@ const Detail = () => {
                     <div className={styles.pendidikanHeader}>
                         <p>Pengalaman Kerja</p>
                     </div>
-                    {local[id].pengalamanKerja.map((e) => (
-                        <div className={styles.dataPendidikanDetail}>
+                    {local[id].pengalamanKerja.map((e, i) => (
+                        <div key={i} className={styles.dataPendidikanDetail}>
                             <p>{e.namaPerusahaan}</p>
                             <p>{e.roleKerja}</p>
                             <p>
@@ -73,7 +71,7 @@ const Detail = () => {
                         <p>Skills</p>
                     </div>
                     {local[id].skills.map((e) => (
-                        <div className={styles.dataSkills}>
+                        <div key={e.id} className={styles.dataSkills}>
                             <p>{e.skillName}</p>
                         </div>
                     ))}

@@ -15,7 +15,7 @@ const Preview = () => {
 
     const itemList = JSON.parse(localStorage.getItem("teravin"));
     let [arrLocal, setArrLocal] = useState(itemList);
-    console.log(itemList, "itemlist");
+
     const [newArr, setNewArr] = useState({
         namaLengkap: namaLengkap,
         email: email,
@@ -39,7 +39,6 @@ const Preview = () => {
         if (itemList === null) {
             let newArr2 = [newArr];
             localStorage.setItem("teravin", JSON.stringify(newArr2));
-            console.log(newArr2);
         } else {
             localStorage.setItem("teravin", JSON.stringify(arrLocal));
         }

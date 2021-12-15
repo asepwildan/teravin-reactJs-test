@@ -1,15 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styles from "./data-personal.module.css";
 import { setStepBarAsync, addPersonalDataAsync } from "../../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const DataPersonal = () => {
-    const setStepBar = useSelector((state) => state);
-    let [arr1, setArr1] = useState([]);
-    let [item2, setItem2] = useState(JSON.parse(localStorage.getItem("testing")));
-    const { personalData2 } = useSelector((state) => state.getPersonalDataReducer);
     const dispatch = useDispatch();
-
     const [values, setValues] = useState({
         namaLengkap: "",
         email: "",
@@ -26,7 +21,6 @@ const DataPersonal = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // setArr1([...arr1, values]);
         dispatch(addPersonalDataAsync(values));
         dispatch(setStepBarAsync());
     };

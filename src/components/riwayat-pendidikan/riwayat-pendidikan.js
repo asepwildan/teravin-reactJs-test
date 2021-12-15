@@ -1,5 +1,5 @@
 import styles from "./riwayat.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { setStepBarAsync, addRiwayatAsync } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 const Riwayat = () => {
@@ -9,7 +9,6 @@ const Riwayat = () => {
     ]);
 
     const handleChange = (i) => (e) => {
-        // console.log("index: ", i);
         const value = e.target.value;
         const name = e.target.name;
         let items = [...formValues];
@@ -30,7 +29,6 @@ const Riwayat = () => {
         dispatch(setStepBarAsync());
     };
 
-    console.log(formValues, "sss");
     return (
         <div className={styles.formSubsContainer}>
             <div>

@@ -36,8 +36,7 @@ const AddSkills = () => {
             },
         ]);
     };
-    console.log(skills, "input");
-    console.log(skills[skills.length - 1].id, "wakwak");
+
     return (
         <div className={styles.formSubsContainer}>
             <div>
